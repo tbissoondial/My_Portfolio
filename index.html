@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portfolio of Tajram Bissoondial, a senior project evaluator and data analyst.">
+  <title>Tajram Bissoondial | Data &amp; Business Analytics</title>
+  <style>
+    :root {
+      --ink: #17221f;
+      --muted: #5e6c67;
+      --paper: #f5f2ea;
+      --surface: #fffdf8;
+      --accent: #d85d3d;
+      --accent-dark: #a8402a;
+      --line: #d9d5ca;
+      --highlight: #e7efe8;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: var(--paper);
+      color: var(--ink);
+      font-family: Georgia, 'Times New Roman', serif;
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .site-header {
+      align-items: center;
+      border-bottom: 1px solid var(--line);
+      display: flex;
+      justify-content: space-between;
+      margin: 0 auto;
+      max-width: 1120px;
+      padding: 1.5rem 2rem;
+    }
+
+    .brand {
+      font-size: 1.35rem;
+      font-weight: bold;
+      letter-spacing: 0.02em;
+      text-decoration: none;
+    }
+
+    .brand span {
+      color: var(--accent);
+    }
+
+    nav ul {
+      display: flex;
+      gap: 1.5rem;
+      list-style: none;
+    }
+
+    nav a {
+      color: var(--muted);
+      font-family: Arial, sans-serif;
+      font-size: 0.82rem;
+      font-weight: bold;
+      text-decoration: none;
+      text-transform: uppercase;
+    }
+
+    nav a:hover,
+    nav a:focus {
+      color: var(--accent-dark);
+    }
+
+    main {
+      margin: 0 auto;
+      max-width: 1120px;
+      padding: 0 2rem;
+    }
+
+    .hero {
+      align-items: center;
+      display: grid;
+      gap: 4rem;
+      grid-template-columns: minmax(0, 1.4fr) minmax(240px, 0.6fr);
+      min-height: 480px;
+      padding: 5rem 0;
+    }
+
+    .eyebrow {
+      color: var(--accent-dark);
+      font-family: Arial, sans-serif;
+      font-size: 0.78rem;
+      font-weight: bold;
+      letter-spacing: 0.16em;
+      margin-bottom: 1.2rem;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      font-size: clamp(3.2rem, 8vw, 6.8rem);
+      font-weight: normal;
+      letter-spacing: -0.04em;
+      line-height: 0.95;
+      max-width: 720px;
+    }
+
+    .hero-copy {
+      color: var(--muted);
+      font-size: 1.15rem;
+      margin-top: 1.8rem;
+      max-width: 530px;
+    }
+
+    .hero-mark {
+      align-items: center;
+      background: var(--highlight);
+      border: 1px solid #c7d6c9;
+      border-radius: 50%;
+      display: flex;
+      height: 240px;
+      justify-content: center;
+      justify-self: end;
+      position: relative;
+      width: 240px;
+    }
+
+    .hero-mark::before,
+    .hero-mark::after {
+      border: 1px solid var(--accent);
+      border-radius: 50%;
+      content: '';
+      position: absolute;
+    }
+
+    .hero-mark::before {
+      height: 170px;
+      width: 170px;
+    }
+
+    .hero-mark::after {
+      height: 90px;
+      width: 90px;
+    }
+
+    .hero-mark strong {
+      color: var(--accent-dark);
+      font-size: 3.5rem;
+      font-weight: normal;
+      position: relative;
+      z-index: 1;
+    }
+
+    .section {
+      border-top: 1px solid var(--line);
+      display: grid;
+      gap: 3rem;
+      grid-template-columns: minmax(160px, 0.35fr) minmax(0, 1fr);
+      padding: 5rem 0;
+    }
+
+    .section-label {
+      color: var(--accent-dark);
+      font-family: Arial, sans-serif;
+      font-size: 0.8rem;
+      font-weight: bold;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .section h2 {
+      font-size: clamp(2rem, 4vw, 3.4rem);
+      font-weight: normal;
+      letter-spacing: -0.03em;
+      line-height: 1;
+      margin-bottom: 1.25rem;
+    }
+
+    .section p {
+      color: var(--muted);
+      font-size: 1.08rem;
+      max-width: 700px;
+    }
+
+    .skills-grid {
+      display: grid;
+      gap: 1rem;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .skill {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      padding: 1.4rem;
+    }
+
+    .skill h3 {
+      font-size: 1.15rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .skill p {
+      font-family: Arial, sans-serif;
+      font-size: 0.9rem;
+      line-height: 1.5;
+    }
+
+    .experience-list {
+      display: grid;
+      gap: 2.5rem;
+    }
+
+    .experience-item {
+      border-left: 3px solid var(--accent);
+      padding-left: 1.25rem;
+    }
+
+    .experience-item h3 {
+      font-size: 1.35rem;
+      margin-bottom: 0.2rem;
+    }
+
+    .experience-meta,
+    .education-meta {
+      color: var(--accent-dark);
+      font-family: Arial, sans-serif;
+      font-size: 0.88rem;
+      font-weight: bold;
+      margin-bottom: 0.75rem;
+    }
+
+    .experience-item ul {
+      color: var(--muted);
+      font-family: Arial, sans-serif;
+      font-size: 0.92rem;
+      padding-left: 1.2rem;
+    }
+
+    .experience-item li + li {
+      margin-top: 0.35rem;
+    }
+
+    .education-list {
+      display: grid;
+      gap: 1.5rem;
+    }
+
+    .education-item h3 {
+      font-size: 1.2rem;
+      margin-bottom: 0.2rem;
+    }
+
+    .education-item p {
+      font-family: Arial, sans-serif;
+      font-size: 0.92rem;
+    }
+
+    footer {
+      color: var(--muted);
+      font-family: Arial, sans-serif;
+      font-size: 0.8rem;
+      padding: 1.5rem 2rem 2.5rem;
+      text-align: center;
+    }
+
+    @media (max-width: 700px) {
+      .site-header {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 1rem;
+        padding: 1.25rem;
+      }
+
+      nav ul {
+        flex-wrap: wrap;
+        gap: 0.8rem 1rem;
+      }
+
+      main {
+        padding: 0 1.25rem;
+      }
+
+      .hero {
+        gap: 2.5rem;
+        grid-template-columns: 1fr;
+        min-height: auto;
+        padding: 4rem 0;
+      }
+
+      .hero-mark {
+        height: 180px;
+        justify-self: start;
+        width: 180px;
+      }
+
+      .hero-mark::before {
+        height: 128px;
+        width: 128px;
+      }
+
+      .hero-mark::after {
+        height: 68px;
+        width: 68px;
+      }
+
+      .hero-mark strong {
+        font-size: 2.6rem;
+      }
+
+      .section {
+        gap: 1.5rem;
+        grid-template-columns: 1fr;
+        padding: 3.5rem 0;
+      }
+
+      .skills-grid {
+        grid-template-columns: 1fr;
+      }
+
+      footer {
+        padding-left: 1.25rem;
+        padding-right: 1.25rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#top">Tajram <span>Bissoondial</span></a>
+    <nav aria-label="Main navigation">
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero" aria-labelledby="welcome-heading">
+      <div>
+        <p class="eyebrow">Senior project evaluator · data analyst</p>
+        <h1 id="welcome-heading">Hello, I’m Tajram.</h1>
+        <p class="hero-copy">I turn healthcare and social-service data into clear performance insights, stronger programs, and better decisions.</p>
+      </div>
+      <div class="hero-mark" aria-hidden="true"><strong>TB</strong></div>
+    </section>
+
+    <section class="section" id="about" aria-labelledby="about-heading">
+      <p class="section-label">01 / About me</p>
+      <div>
+        <h2 id="about-heading">Analytics that connect outcomes to action.</h2>
+        <p>Results-driven analytics professional with 9+ years of experience across healthcare and social services. I specialize in KPI reporting, performance evaluation, dashboard development, grant evaluation, and regulatory compliance.</p>
+      </div>
+    </section>
+
+    <section class="section" id="skills" aria-labelledby="skills-heading">
+      <p class="section-label">02 / Skills</p>
+      <div>
+        <h2 id="skills-heading">A practical toolkit for better decisions.</h2>
+        <div class="skills-grid">
+          <article class="skill">
+            <h3>Analytics &amp; BI</h3>
+            <p>Power BI, Tableau, and Dash for KPI reporting and performance dashboards.</p>
+          </article>
+          <article class="skill">
+            <h3>Programming</h3>
+            <p>Python, SQL, R, HTML, Java, and Unix for analysis and automation.</p>
+          </article>
+          <article class="skill">
+            <h3>Bioinformatics</h3>
+            <p>NCBI, GenBank, VMD, PDB, and ClustalW for biomedical data work.</p>
+          </article>
+          <article class="skill">
+            <h3>Healthcare Systems</h3>
+            <p>EMR systems, HIPAA, and Joint Commission accreditation standards.</p>
+          </article>
+          <article class="skill">
+            <h3>Core Competencies</h3>
+            <p>KPI reporting, program and grant evaluation, compliance, audits, and stakeholder collaboration.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="experience" aria-labelledby="experience-heading">
+      <p class="section-label">03 / Experience</p>
+      <div>
+        <h2 id="experience-heading">Building systems that make progress visible.</h2>
+        <div class="experience-list">
+          <article class="experience-item">
+            <h3>Senior Project Evaluator</h3>
+            <p class="experience-meta">The Jewish Board for Family &amp; Children Services · New York, NY · 06/2024 - 06/2026</p>
+            <ul>
+              <li>Lead program and performance evaluations, identifying gaps and recommending data-driven improvements.</li>
+              <li>Design and maintain dashboards and KPI reports tracking outcomes, efficiency, and grant performance.</li>
+              <li>Conduct grant and funding evaluations while ensuring regulatory and reporting compliance.</li>
+              <li>Collaborate with senior stakeholders to align evaluation frameworks with organizational goals.</li>
+            </ul>
+          </article>
+          <article class="experience-item">
+            <h3>Data Analyst - Behavioral Health &amp; Oncology</h3>
+            <p class="experience-meta">St. John's Episcopal Hospital · Far Rockaway, NY · 03/2023 - 06/2024</p>
+            <ul>
+              <li>Led the transition of patient satisfaction surveys from paper to electronic and produced KPI reports for management.</li>
+              <li>Built oncology financial dashboards tracking month-over-month revenue and expense ratios.</li>
+              <li>Monitored regulatory compliance and supported policy updates aligned with accreditation standards.</li>
+            </ul>
+          </article>
+          <article class="experience-item">
+            <h3>Business Data Analyst</h3>
+            <p class="experience-meta">Americare Inc. · Brooklyn, NY · 04/2022 - 03/2023</p>
+            <ul>
+              <li>Collaborated with management to design performance improvement initiatives across the organization.</li>
+              <li>Monitored regulatory compliance and revised policies to meet governmental and accreditation standards.</li>
+              <li>Conducted audits and investigations while maintaining confidentiality protocols.</li>
+            </ul>
+          </article>
+          <article class="experience-item">
+            <h3>Systems I.T. Analyst</h3>
+            <p class="experience-meta">Manhattan Restorative Health Sciences · New Hyde Park, NY · 12/2018 - 07/2022</p>
+            <ul>
+              <li>Managed and maintained EMR systems, ensuring data integrity and operational uptime across facilities.</li>
+              <li>Generated efficiency and performance reports from EMR systems and developed organization-wide protocols.</li>
+              <li>Troubleshot technical issues and oversaw system upgrades to meet evolving practice requirements.</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="education" aria-labelledby="education-heading">
+      <p class="section-label">04 / Education</p>
+      <div>
+        <h2 id="education-heading">Grounded in business and biomedical informatics.</h2>
+        <div class="education-list">
+          <article class="education-item">
+            <h3>M.S. Business Analytics</h3>
+            <p class="education-meta">Adelphi University · Garden City, NY · August 2022</p>
+          </article>
+          <article class="education-item">
+            <h3>B.S. Biomedical Informatics</h3>
+            <p class="education-meta">NYC College of Technology · Brooklyn, NY · September 2019</p>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer id="contact">
+    <p>South Ozone Park, NY · <a href="tel:+17188105593">718-810-5593</a> · <a href="mailto:Bissoondialt0974@gmail.com">Bissoondialt0974@gmail.com</a> · <a href="https://linkedin.com/in/tajram-bissoondial" target="_blank" rel="noreferrer">LinkedIn</a></p>
+  </footer>
+</body>
+</html>
